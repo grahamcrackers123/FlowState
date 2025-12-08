@@ -1,0 +1,278 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+    background-color: #8ac173;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* BUTTON OVERALL */
+
+button {
+    background: #578941;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+/* HEADER w/ NAV LINKS */
+
+#main-header {
+    background-color: #578941;
+    color: white;
+    /* padding: 5px 0; */
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav {
+    height: 100%;
+}
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#main-nav ul li {
+    height: 100%;
+}
+
+#main-nav ul li a {
+    height: 100%;
+    display: flex;
+    /* display: block; */
+    align-items: center;
+    padding: 15px;
+}
+
+#main-nav ul li a:hover {
+    background-color: #8ac173;
+}
+
+#title-logo {
+    display: flex;
+    align-items: center;
+}
+
+#title-logo img {
+    height: 2.5em;
+    width: auto;
+}
+
+
+
+
+/* --- */
+#menu-button {
+    display: none;
+}
+
+#menu-button img {
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+
+    #title-logo {
+        margin-left: 10px;
+    }
+
+    #menu-button {
+        display: block;
+    }
+
+    #main-nav {
+        display: none;
+        width: 100%;
+    }
+
+    #main-nav.active {
+        display: block;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #main-nav ul li {
+        /* padding: 10px; */
+        width: 100%;
+    }
+
+    #main-header .container {
+        flex-wrap: wrap;
+    }
+
+
+}
+
+
+/* HERO SECTION */
+
+#hero {
+    background: linear-gradient(rgba(115, 115, 115, 0.5), rgba(115,115,115,0.5)), url(../images/index-hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+    text-align: center;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#hero h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 3.5rem;
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero-button {
+    padding: 10px 80px;
+    font-size: medium;
+}
+
+
+
+
+/* OVERVIEW */
+
+#overview .container{
+    display: flex;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+#overview img{
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+}
+
+.overview-text {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.overview-text h2 {
+    margin-bottom: 0;
+}
+
+@media (max-width:768px) {
+    #overview .container {
+        flex-direction: column;
+    }
+
+    #overview img {
+        width: 100%;
+    }
+}
+
+/* bottom part (PAGE EXPLANATION + LINKS) */
+#pages-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.page-item {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    width: 32%;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    #pages-section .container {
+        flex-direction: column;
+    }
+
+    .page-item {
+        width: 100%;
+    }
+}
+
+.page-item img {
+    width: 100%;
+    height: auto;
+}
+
+.page-item h2 {
+    margin: 20px auto 0 auto;
+    font-size: 20px;
+}
+
+.page-item p {
+    margin: 20px;
+}
+
+.page-button {
+    padding: 0 20px;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #578941;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer h2 {
+    margin: 20px;
+}
+
+footer p {
+    margin: 0 0 20px 0;
+}

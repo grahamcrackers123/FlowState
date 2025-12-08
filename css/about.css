@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+    background-color: #8ac173;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* HEADER w/ NAV LINKS */
+
+#main-header {
+    background-color: #578941;
+    color: white;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#main-nav ul li {
+    padding: 5px 5px;
+    margin: 0 0 0 5px;
+    /* margin: 0 5px 0 0; */
+}
+
+#main-nav ul li:hover {
+    background-color: #8ac173;
+}
+
+.selected-page {
+    background-color: #8ac173;
+}
+
+
+/* HERO SECTION */
+
+#hero {
+    background: linear-gradient(rgba(115, 115, 115, 0.5), rgba(115,115,115,0.5)), url(../images/index-hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+    text-align: center;
+    color: white;
+    
+
+    /* centers the whole box container that has the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h2 {
+    margin: 0;
+    font-size: 3.5rem;
+    line-height: 1.1;
+}
+
+#hero p {
+    margin: 0;
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    #hero .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 20px;
+    }
+}
+
+/* ABOUT PROJECT SECTION */
+
+#about .container{
+    display: flex;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 40px;
+}
+
+#about h2 {
+    margin-bottom: 0;
+}
+
+/* ABOUT MEMBERS */
+
+#members-section .container {
+    background-color: white;
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+#about-members-text {
+    margin: 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.members {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+    margin: 0 0 20px 0;
+} 
+
+.member {
+    background-color: white;
+    flex: 1 1 300px;
+    max-width: 440px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* https://www.w3schools.com/csS/css3_shadows_box.asp */
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.member h2 {
+    margin-bottom: 0;
+}
+
+.member p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.member img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #578941;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer h2 {
+    margin: 20px;
+}
+
+footer p {
+    margin: 0 0 20px 0;
+}
