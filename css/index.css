@@ -35,11 +35,13 @@ button {
     background-color: #578941;
     color: white;
     /* padding: 5px 0; */
+    /* makes header larger */
 }
 
 #main-header .container {
     display: flex;
     justify-content: space-between;
+    width: 95%;
     align-items: center;
 }
 
@@ -96,7 +98,7 @@ button {
 @media (max-width: 768px) {
 
     #title-logo {
-        margin-left: 10px;
+        /* margin-left: 10px; */
     }
 
     #menu-button {
