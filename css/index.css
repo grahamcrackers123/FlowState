@@ -83,17 +83,23 @@ button {
     width: auto;
 }
 
+/* log in & sign up button in header  */
 #main-nav ul li #log-in-button {
     background-color: #8ac173;
     padding: 5px 10px;
-    justify-content: space-between;
-    width: 70px;
-    border-radius: 8px;
+    width: 45px;
 }
 
-#log-in-button img {
+#log-in-button img, #sign-up-button img {
     height: 1em;
     width: auto;
+}
+
+#main-nav ul li #sign-up-button {
+    background-color: white;
+    padding: 5px 10px;
+    width: 55px;
+    color: #578941;;
 }
 
 
