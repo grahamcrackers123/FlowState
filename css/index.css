@@ -155,10 +155,12 @@ button {
 
     #main-header .container {
         flex-wrap: wrap;
+        width: 100%;
     }
 
     #main-nav ul li a:hover {
         background-color: #8ac173;
+        color: white;
     }
 
 
