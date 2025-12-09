@@ -75,6 +75,15 @@ button {
     color: #a7e18d;
 }
 
+#main-nav ul li #log-in-button:hover {
+    background-color: #578941;
+}
+
+#main-nav ul li #sign-up-button:hover {
+    background-color: #8ac173;
+    color: white;
+}
+
 #title-logo {
     display: flex;
     align-items: center;
@@ -88,7 +97,7 @@ button {
 /* log in & sign up button in header  */
 #main-nav ul li #log-in-button {
     background-color: #8ac173;
-    padding: 5px 10px;
+    padding: 7px 10px;
     width: 45px;
 }
 
@@ -99,7 +108,7 @@ button {
 
 #main-nav ul li #sign-up-button {
     background-color: white;
-    padding: 5px 10px;
+    padding: 7px 10px;
     width: 55px;
     color: #578941;;
 }
@@ -146,6 +155,10 @@ button {
 
     #main-header .container {
         flex-wrap: wrap;
+    }
+
+    #main-nav ul li a:hover {
+        background-color: #8ac173;
     }
 
 
