@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FlowState</title>
+
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                line-height: 1.6em;
+                background-color: #8ac173;
+                margin: 0;
+            }
+
+            /* removes default style */
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header-name h1 {
+                margin: 0;
+            }
+
+            /* --- */
+
+            header {
+                background-color: #578941;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .header-name {
+                font-weight: bold;
+            }
+
+            #nav #nav-list {
+                display: flex;
+                gap: 12px;
+            }
+
+            .header-title, #nav-list {
+                display: flex;
+                margin: 20px;
+                align-items: center;
+            }
+
+            .header-logo {
+                height: 35px;
+                width: auto;
+            }
+            .nav-button {
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+
+            #sign-up-button .nav-button {
+                background-color: white;
+                color: #578941;
+            }
+
+            #log-in-button .nav-button {
+                background-color: #8ac173;
+                color: white;
+            }
+
+            #menu-button {
+                display: none;
+            }
+
+            #menu-button img {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* button {
+                color: white;
+            } */
+
+            @media (max-width: 768px) {
+                #menu-button {
+                    display: block;
+                    margin: 10px;
+                    background-color: transparent;
+                    border: none;
+                }
+
+                #nav {
+                    display: none;
+                    width: 100%;
+                }
+
+                #nav.active {
+                    display: block;
+                }
+
+                #nav #nav-list {
+                    flex-direction: column;
+                    width: 100%;
+                    margin: 0;
+                    gap: 0;
+                    /* align-items: stretch; */
+                }
+
+                header {
+                    flex-wrap: wrap;
+                }
+
+                .nav-item {
+                    text-align: center;
+                }
+
+                .nav-button {
+                    display: block;
+                    padding: 8px 15px;
+                    border-radius: 20px;
+                }
+
+                #log-in-button .nav-button {
+                    margin: 8px 10px 8px 10px;
+                }
+
+                
+                #sign-up-button .nav-button {
+                    margin: 0px 10px 8px 10px;
+                }
+
+                .nav-link {
+                    display: block;
+                    padding: 15px;
+                }
+
+                .nav-item .nav-link:hover {
+                    background-color: #8ac173;
+                }
+
+                #log-in-button .nav-button:hover {
+                    background-color: #72b455;
+                    color: white;
+                }
+
+                #sign-up-button .nav-button:hover {
+                    background-color: rgb(226, 226, 226);
+                    color: #578941;
+                    
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+
+            <div class="header-title">
+                <img class="header-logo" src="./images/logo-lightgreen.png" alt="FlowState Logo">
+                <a class="header-name" href="#"><h1>FlowState</h1></a>
+            </div>
+
+            <button id="menu-button">
+                    <img src="./icons/hamburger-menu-mobile-svgrepo-com.svg" alt="Menu Icon">
+                    <!-- https://www.svgrepo.com/svg/493681/hamburger-menu-mobile -->
+            </button>
+
+            <nav id="nav">
+                <ul id="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="#">Calculate Productivity</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item" id="log-in-button"><a class="nav-button"  href="#">Log in</a></li>
+                    <li class="nav-item" id="sign-up-button"><a class="nav-button"  href="#">Sign up</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <script src="./scripts/menu-two.js"></script>
+    </body>
+</html>

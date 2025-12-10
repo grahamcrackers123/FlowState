@@ -1,24 +1,11 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.6em;
-    margin: 0;
-    background-color: #8ac173;
-}
-
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
 /* BUTTON OVERALL */
-
+/* not sure if idedelete ko ba or what */
 button {
     background: #578941;
     border: none;
@@ -27,143 +14,6 @@ button {
     cursor: pointer;
     border-radius: 8px;
 }
-
-
-/* HEADER w/ NAV LINKS */
-
-#main-header {
-    background-color: #578941;
-    color: white;
-    /* padding: 5px 0; */
-    /* makes header larger */
-}
-
-#main-header .container {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    align-items: center;
-}
-
-#main-nav {
-    height: 100%;
-}
-
-#main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: space-between;
-}
-
-#main-nav ul li {
-    height: 100%;
-}
-
-#main-nav ul li a {
-    height: 100%;
-    display: flex;
-    /* display: block; */
-    align-items: center;
-    /* padding: 5px; */
-}
-
-#main-nav ul li a:hover {
-    color: #a7e18d;
-}
-
-#main-nav ul li #log-in-button:hover {
-    background-color: #578941;
-}
-
-#main-nav ul li #sign-up-button:hover {
-    background-color: #8ac173;
-    color: white;
-}
-
-#title-logo {
-    display: flex;
-    align-items: center;
-}
-
-#title-logo img {
-    height: 2.5em;
-    width: auto;
-}
-
-/* log in & sign up button in header  */
-#main-nav ul li #log-in-button {
-    background-color: #8ac173;
-    padding: 7px 10px;
-    width: 45px;
-}
-
-#log-in-button img, #sign-up-button img {
-    height: 1em;
-    width: auto;
-}
-
-#main-nav ul li #sign-up-button {
-    background-color: white;
-    padding: 7px 10px;
-    width: 55px;
-    color: #578941;;
-}
-
-
-/* --- */
-#menu-button {
-    display: none;
-}
-
-#menu-button img {
-    width: 30px;
-    height: 30px;
-}
-
-@media (max-width: 768px) {
-
-    #title-logo {
-        /* margin-left: 10px; */
-    }
-
-    #menu-button {
-        display: block;
-    }
-
-    #main-nav {
-        display: none;
-        width: 100%;
-    }
-
-    #main-nav.active {
-        display: block;
-    }
-
-    #main-nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #main-nav ul li {
-        /* padding: 10px; */
-        width: 100%;
-    }
-
-    #main-header .container {
-        flex-wrap: wrap;
-    }
-
-    #main-nav ul li a:hover {
-        background-color: #8ac173;
-    }
-
-
-}
-
 
 /* HERO SECTION */
 

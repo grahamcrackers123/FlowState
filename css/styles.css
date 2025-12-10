@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    background-color: #8ac173;
+    margin: 0;
+}
+
+/* removes default style */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-name h1 {
+    margin: 0;
+}
+
+/* --- */
+
+header {
+    background-color: #578941;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-name {
+    font-weight: bold;
+}
+
+#nav #nav-list {
+    display: flex;
+    gap: 12px;
+}
+
+.header-title, #nav-list {
+    display: flex;
+    margin: 20px;
+}
+
+.header-title {
+    align-items: center;
+}
+
+.header-logo {
+    height: 35px;
+    width: auto;
+}
+.nav-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#sign-up-button .nav-button {
+    background-color: white;
+    color: #578941;
+}
+
+#log-in-button .nav-button {
+    background-color: #8ac173;
+    color: white;
+}
+
+#menu-button {
+    display: none;
+}
+
+#menu-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* button {
+    color: white;
+} */
+
+.nav-item .nav-link:hover {
+    color:#8ac173
+}
+
+#log-in-button .nav-button:hover {
+    background-color: #72b455;
+    color: white;
+}
+
+#sign-up-button .nav-button:hover {
+    background-color: rgb(226, 226, 226);
+    color: #578941;
+    
+}
+
+
+
+@media (max-width: 768px) {
+    #menu-button {
+        display: block;
+        margin: 10px;
+        background-color: transparent;
+        border: none;
+    }
+
+    #nav {
+        display: none;
+        width: 100%;
+    }
+
+    #nav.active {
+        display: block;
+    }
+
+    #nav #nav-list {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        gap: 0;
+        /* align-items: stretch; */
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        text-align: center;
+    }
+
+    .nav-button {
+        display: block;
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+
+    #log-in-button .nav-button {
+        margin: 8px 10px 8px 10px;
+    }
+
+    
+    #sign-up-button .nav-button {
+        margin: 0px 10px 8px 10px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 15px;
+    }
+
+    .nav-item .nav-link:hover {
+        background-color: #8ac173;
+        color: white;
+    }
+
+}
