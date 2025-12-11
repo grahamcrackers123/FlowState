@@ -1,0 +1,45 @@
+
+/* HERO SECTION */
+
+#hero {
+    background: linear-gradient(rgba(115, 115, 115, 0.5), rgba(115,115,115,0.5)), url(../images/index-hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+    text-align: center;
+    color: white;
+    
+
+    /* centers the whole box container that has the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h2 {
+    margin: 0;
+    font-size: 3.5rem;
+    line-height: 1.1;
+}
+
+#hero p {
+    margin: 0;
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    #hero .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 20px;
+    }
+}
