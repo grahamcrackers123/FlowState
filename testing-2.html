@@ -52,6 +52,9 @@
             .header-title, #nav-list {
                 display: flex;
                 margin: 20px;
+            }
+
+            .header-title {
                 align-items: center;
             }
 
@@ -86,6 +89,23 @@
             /* button {
                 color: white;
             } */
+
+            .nav-item .nav-link:hover {
+                color:#8ac173
+            }
+
+            #log-in-button .nav-button:hover {
+                background-color: #72b455;
+                color: white;
+            }
+
+            #sign-up-button .nav-button:hover {
+                background-color: rgb(226, 226, 226);
+                color: #578941;
+                
+            }
+
+
 
             @media (max-width: 768px) {
                 #menu-button {
@@ -142,25 +162,15 @@
 
                 .nav-item .nav-link:hover {
                     background-color: #8ac173;
-                }
-
-                #log-in-button .nav-button:hover {
-                    background-color: #72b455;
                     color: white;
                 }
 
-                #sign-up-button .nav-button:hover {
-                    background-color: rgb(226, 226, 226);
-                    color: #578941;
-                    
-                }
             }
         </style>
 
     </head>
     <body>
         <header>
-
             <div class="header-title">
                 <img class="header-logo" src="./images/logo-lightgreen.png" alt="FlowState Logo">
                 <a class="header-name" href="#"><h1>FlowState</h1></a>
@@ -180,8 +190,8 @@
                     <li class="nav-item" id="sign-up-button"><a class="nav-button"  href="#">Sign up</a></li>
                 </ul>
             </nav>
-
         </header>
+        
         <script src="./scripts/menu-two.js"></script>
     </body>
 </html>

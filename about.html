@@ -5,20 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FlowState</title>
         <!-- insert tab icon -->
+         <link rel="stylesheet" href="./css/styles.css">
          <link rel="stylesheet" href="./css/about.css">
     </head>
     <body>
-        <header id="main-header">
-            <div class="container">
-                <a href="index.html"><h1>FlowState</h1></a>
-                <nav id="main-nav">
-                    <ul>
-                        <li><a href="calculate-productivity.html">Calculate Productivity</a></li>
-                        <li><a href="history.html">History</a></li>
-                        <li class="selected-page"><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
+        <header>
+            <div class="header-title">
+                <img class="header-logo" src="./images/logo-lightgreen.png" alt="FlowState Logo">
+                <a class="header-name" href="index.html"><h1>FlowState</h1></a>
             </div>
+
+            <button id="menu-button">
+                    <img src="./icons/hamburger-menu-mobile-svgrepo-com.svg" alt="Menu Icon">
+                    <!-- https://www.svgrepo.com/svg/493681/hamburger-menu-mobile -->
+            </button>
+
+            <nav id="nav">
+                <ul id="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="calculate-productivity.html">Calculate Productivity</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item" id="log-in-button"><a class="nav-button"  href="#">Log in</a></li>
+                    <li class="nav-item" id="sign-up-button"><a class="nav-button"  href="#">Sign up</a></li>
+                </ul>
+            </nav>
         </header>
 
         <section id="hero">
@@ -90,5 +100,7 @@
             <h2>FLOWSTATE</h2>
             <p>© 2025 FlowState. All Rights Reserved.</p>
         </footer>
+
+        <script src="./scripts/menu.js"></script>
     </body>
 </html>
