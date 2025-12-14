@@ -32,6 +32,12 @@
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+    #about-members-text {
+        margin: 20px;
+    }
+}
+
 .members {
     display: flex; 
     flex-wrap: wrap;
