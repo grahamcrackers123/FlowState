@@ -37,24 +37,31 @@
         </div>
     </section>
 
-    <form id="website-entry-form">
-        <div class="form-group">
-            <label for="site-name">Website:</label>
-            <input type="text" id="site-name">
+    <section id="form">
+        <div class="container">
+            <form id="website-entry-form">
+            <div class="form-group">
+                <label for="site-name">Website:</label>
+                <input type="text" id="site-name">
+            </div>
+            <div class="form-group">
+                <label for="min-duration">Minutes:</label>
+                <input type="text" id="min-duration">
+            </div>
+            <div class="form-group">
+                <label for="site-category">Category:</label>
+                <input type="radio" value="Productive" name="site-category">
+                <label for="productive">Productive</label>
+                <input type="radio" value="Unproductive" name="site-category">
+                <label for="unproductive">Unproductive</label>
+            </div>
+            <input type="submit" value="Add Entry">
+        </form>
         </div>
-        <div class="form-group">
-            <label for="min-duration">Minutes:</label>
-            <input type="text" id="min-duration">
-        </div>
-        <div class="form-group">
-            <label for="site-category">Category:</label>
-            <input type="radio" value="Productive" name="site-category">
-            <label for="productive">Productive</label>
-            <input type="radio" value="Unproductive" name="site-category">
-            <label for="unproductive">Unproductive</label>
-        </div>
-        <input type="submit" value="Add Entry">
-    </form>
+    </section>
+
+    
+
     <table>
         <thead>
             <tr>
