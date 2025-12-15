@@ -6,6 +6,7 @@
     <title>FlowState</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/hero-small.css">
+    <link rel="stylesheet" href="./css/calculate-productivity.css">
 </head>
 <body>
     <header>
@@ -62,17 +63,22 @@
 
     
 
-    <table>
-        <thead>
-            <tr>
-                <th>Website</th>
-                <th>Minutes Spent</th>
-                <th>Tag</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody id="entry-list"></tbody>
-    </table>
+    <section id="entry-list-table">
+        <div class="container">
+            <table>
+            <thead>
+                <tr>
+                    <th>Website</th>
+                    <th>Minutes Spent</th>
+                    <th>Tag</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="entry-list"></tbody>
+        </table>
+        </div>
+    </section>
+    
 
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/calculate-productivity.js"></script>

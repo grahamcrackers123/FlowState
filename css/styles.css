@@ -117,14 +117,26 @@ header {
         border: none;
     }
 
-    #nav {
+    /* #nav {
         display: none;
         width: 100%;
     }
 
     #nav.active {
         display: block;
+    } */
+
+    #nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s linear;
     }
+
+    #nav.active {
+        max-height: 500px;
+    }
+
 
     #nav #nav-list {
         flex-direction: column;

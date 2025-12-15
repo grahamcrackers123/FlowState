@@ -1,0 +1,12 @@
+/* table section  */
+
+#form .container,
+#entry-list-table .container {
+    background-color: white;
+    border-radius: 16px;
+}
+
+table {
+    margin: 10px;
+}
+
