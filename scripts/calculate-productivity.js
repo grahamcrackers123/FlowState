@@ -1,129 +1,189 @@
-class SiteEntry {
-    constructor(name, minutes, category) {
-        this.id = crypto.randomUUID();
-        this.name = name;
+//--------------O B J E C T S--------------
+class Record {
+    constructor(website, minutes, tag, date = new Date().toISOString().split('T')[0]) {
+        this.website = website;
         this.minutes = minutes;
-        this.category = category;
+        this.tag = tag;
+        this.date = date; // format like "2025-10-22"
     }
 }
 
-class Store {
-    static getEntries() {
-        let entries;
-        if(localStorage.getItem('entries') === null) {
-            entries = [];
-        } else {
-            entries = JSON.parse(localStorage.getItem('entries'));
+class ProductivityTracker{
+    constructor(){
+        this.records=[]
+    }
+
+    addRecord(record){
+        this.records.push(record);
+    }
+
+    calculateTotals(){
+        let productive = 0;
+        let unproductive = 0;
+
+        for(let record of this.records){
+            if(record.tag ==="Productive") productive +=record.minutes;
+            else if(record.tag ==="Unproductive") unproductive +=record.minutes;
         }
-        return entries;
-    }
 
-    static addEntry(entry) {
-        const entries = Store.getEntries();
-        entries.push(entry);
-        localStorage.setItem('entries', JSON.stringify(entries));
-    }
-
-    static removeEntry(id) {
-        console.log('ID RECEIVED:', id);
-
-        const entries = Store.getEntries();
-        console.log('ENTRIES:', entries);
-
-        const filteredEntries = entries.filter(entry => entry.id !== id);
-        console.log('FILTERED:', filteredEntries);
-
-        localStorage.setItem('entries', JSON.stringify(filteredEntries));
+        return{productive, unproductive}
     }
 }
 
-class UI {
-    static displayList() {
-        // const storedEntries = [
-        //     {
-        //         name: 'sample.com',
-        //         minutes: 23,
-        //         category: 'Productive'
-        //     },
-        //     {
-        //         name: 'sample-two.com',
-        //         minutes: 23,
-        //         category: 'Unproductive'
-        //     }
-        // ];
 
-        // const entries = storedEntries;
-        const entries = Store.getEntries();
+//---M E T H O D S-------
+function updateTotals(){
+    const totals = tracker.calculateTotals();
+    productiveTotal.textContent = `${totals.productive} mins`;
+    unproductiveTotal.textContent = `${totals.unproductive} mins`;
 
-        entries.forEach((entry) => UI.addEntryToList(entry));
-        
-    }
+    const total = totals.productive + totals.unproductive;
+    const productivePercent = total > 0 ? (totals.productive / total) * 100 : 0;
+    const unproductivePercent = 100 - productivePercent;
 
-    static addEntryToList(entry) {
-        const list = document.getElementById('entry-list');
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${entry.name}</td>
-            <td>${entry.minutes}</td>
-            <td>${entry.category}</td>
-            <td><a href="#" class="delete" data-id="${entry.id}">X</a></td>
-        `;
+    updateDonutChart(productivePercent.toFixed(1), unproductivePercent.toFixed(1));
 
-        list.appendChild(row);
-    }
-
-    static clearFields() {
-        document.getElementById('site-name').value = '';
-        document.getElementById('min-duration').value = '';
-        document.querySelector('input[name="site-category"]:checked');
-    }
-
-    static deleteEntry(el) {
-        if(el.classList.contains('delete')) {
-            el.parentElement.parentElement.remove();
-        }
-    }
 }
 
-document.addEventListener('DOMContentLoaded', UI.displayList);
+function updateDonutChart(productivePercent, unproductivePercent) {
+    const productiveCircle = document.querySelector(".donut-productive");
+    const unproductiveCircle = document.querySelector(".donut-unproductive");
+    const donutText = document.querySelector(".donut-text");
 
-document.getElementById('website-entry-form').addEventListener('submit', (e) => {
-    // delete after
-    e.preventDefault();
+    productiveCircle.setAttribute("stroke-dasharray", `${productivePercent} ${100 - productivePercent}`);
+    productiveCircle.setAttribute("stroke-dashoffset", 0);
 
-    // get values inputted
-    const name = document.getElementById('site-name').value;
-    const minutes = Number(document.getElementById('min-duration').value);
-    const checkedCategory = document.querySelector('input[name="site-category"]:checked');
+    unproductiveCircle.setAttribute("stroke-dasharray", `${unproductivePercent} ${100 - unproductivePercent}`);
+    unproductiveCircle.setAttribute("stroke-dashoffset", -productivePercent);
 
-    // validation before values get submitted
-    const noRadioButtonsChecked = !document.querySelector('input[name="site-category"]:checked');
-    if(name === '' || Number.isNaN(minutes) || !checkedCategory) {
-        alert('Plase fill in all fields.');
+    donutText.textContent = `${productivePercent}%`;
+
+    document.querySelector("#productive-percent").textContent = `${productivePercent}%`;
+    document.querySelector("#unproductive-percent").textContent = `${unproductivePercent}%`;
+
+}
+
+// Load data
+function loadRecords() {
+    const today = new Date().toISOString().split('T')[0];
+    const lastSavedDate = localStorage.getItem("lastSavedDate");
+    const saved = JSON.parse(localStorage.getItem("productivityRecords")) || [];
+
+    if (lastSavedDate === today) {
+        tracker.records = saved.map(r => new Record(r.website, r.minutes, r.tag, r.date));
     } else {
-        const category = checkedCategory.value;
+        // new day, clear today's list
+        tracker.records = [];
+        localStorage.setItem("productivityRecords", JSON.stringify([]));
+        localStorage.setItem("lastSavedDate", today);
+    }
+}
 
-        // instantiate entry
-        const entry = new SiteEntry(name, minutes, category);
+// Save data
+function saveRecords() {
+    const today = new Date().toISOString().split('T')[0];
+    localStorage.setItem("productivityRecords", JSON.stringify(tracker.records));
+    localStorage.setItem("lastSavedDate", today);
+}
 
-        // add entry to ui
-        UI.addEntryToList(entry);
 
-        // add book to localstorage
-        Store.addEntry(entry);
 
-        // UI.clearFields();
-        e.target.reset();
+
+//-----D E C L A R A T I O N S--------
+const tracker = new ProductivityTracker();
+
+
+const form = document.querySelector("#website-entry-form");
+const tableBody = document.querySelector("#entry-list");
+const productiveTotal = document.querySelector("#productive-total");
+const unproductiveTotal = document.querySelector("#unproductive-total");
+
+
+//----I N I T--------
+loadRecords();
+
+for (let record of tracker.records) {
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+        <td>${record.website}</td>
+        <td>${record.minutes}</td>
+        <td>${record.tag}</td>
+        <td><button class="delete">X</button></td>
+    `;
+    tableBody.appendChild(newRow);
+}
+updateTotals();
+
+//-------E V E N T  L I S T E N E R S--------
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+   
+    //Get values
+    const website = document.querySelector("#site-name").value;
+    const minutes = parseInt(document.querySelector("#min-duration").value);
+    const tag = document.querySelector('input[name="site-category"]:checked').value;
+   
+    const totalsNow = tracker.calculateTotals();
+    const currentTotal = totalsNow.productive + totalsNow.unproductive;
+
+    if(currentTotal + minutes > 1440){
+        alert('Cannot add minutes because it exceeds the minutes in a day (1440)');
+        return;
+
+    }
+
+
+    //create record
+    const record = new Record(website, minutes, tag);
+    tracker.addRecord(record);
+
+     saveRecords();
+    console.log("LocalStorage content:");
+for (let key in localStorage) {
+  if (localStorage.hasOwnProperty(key)) {
+    console.log(key, localStorage.getItem(key));
+  }
+}
+
+    //update table
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+        <td>${website}</td>
+        <td>${minutes}</td>
+        <td>${tag}</td>
+        <td><button class="delete">X</button></td>
+    `;
+    tableBody.appendChild(newRow);
+
+
+      //const totals = tracker.calculateTotals();
+   // console.log(totals); // for now, just show in console
+
+    updateTotals();
+  
+   
+    form.reset();
+});
+
+tableBody.addEventListener("click", function(event){
+    if(event.target.classList.contains("delete")){
+        const row = event.target.closest("tr");
+        const website = row.children[0].textContent;
+        const minutes = parseInt(row.children[1].textContent);
+        const tag = row.children[2].textContent;
+
+        const confirmDelete = confirm(`Are you sure you want to delete the record for "${website}" (${minutes} mins)?`);
+       
+        if (confirmDelete) {
+
+        tracker.records = tracker.records.filter(record => {
+            return !(record.website === website && record.minutes === minutes && record.tag === tag);
+        });
+        saveRecords();
+         row.remove();
+        updateTotals();
+    }
     }
 });
 
-// remove a book
-document.getElementById('entry-list').addEventListener('click', (e) => {
-    // remove from ui
-    UI.deleteEntry(e.target);
 
-    // remove book from localstorage
-    if(e.target.matches('.delete')) {
-        Store.removeEntry(e.target.dataset.id);
-    }
-});

@@ -61,6 +61,30 @@
         </div>
     </section>
 
+    <section id="summary">
+
+        <svg viewBox="0 0 40 40" class="donut" >
+            <circle class="donut-ring" cx="18" cy="18" r="15" />
+            <circle class="donut-segment donut-productive" cx="18" cy="18" r="15" stroke-dasharray="0 100" />
+            <circle class="donut-segment donut-unproductive" cx="18" cy="18" r="15" stroke-dasharray="0 100" stroke-dashoffset="0" />
+            <text x="18" y="20.35" class="donut-text">0%</text>
+        </svg>
+
+        <p class="summary-label">
+            Productivity:
+            <span id="productive-total">0 mins</span>
+        </p>
+        <p class="summary-label">
+            Unproductivity:
+            <span id="unproductive-total">0 mins</span>
+        </p>
+
+        <div class="donut-labels">
+            <p class="productive-label"><span class="label-size productive-color"></span> Productive: <span id="productive-percent">0%</span></p>
+            <p class="unproductive-label"><span class="label-size unproductive-color"></span> Unproductive: <span id="unproductive-percent">0%</span></p>
+        </div>
+    </section>
+
     
 
     <section id="entry-list-table">

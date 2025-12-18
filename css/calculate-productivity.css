@@ -10,3 +10,79 @@ table {
     margin: 10px;
 }
 
+
+
+/* donut chart  */
+
+
+
+.donut {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg); /* start circle at top */
+}
+
+.donut-ring {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 3.5;
+}
+
+.donut-segment {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+}
+
+.donut-productive {
+  stroke: #578941; /* dark green */
+}
+
+.donut-unproductive {
+  stroke: #2ecc71; /* light green */
+}
+
+.donut-text {
+  text-anchor: middle;
+  fill: #333;
+  transform: rotate(90deg);
+  dominant-baseline: middle;
+}
+
+
+.donut-labels {
+  
+  color: #333;
+}
+
+.donut-label {
+  margin: 0.2rem 0;
+}
+
+.label-size {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.productive-color {
+  background-color: #578941; /* dark green */
+}
+
+.unproductive-color {
+  background-color: #2ecc71; /* light green */
+}
+
+
+@media(min-width: 87.5rem){
+    .white_box_summary{
+      height: 49rem;
+    }
+}
+
+@media(max-width: 75rem){
+    .white_box_form{
+      height: 52rem;
+    }
+}
