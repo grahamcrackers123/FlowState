@@ -1,14 +1,17 @@
 /* table section  */
 
 #form .container,
+#summary .container,
 #entry-list-table .container {
     background-color: white;
     border-radius: 16px;
+    padding: 1em;
+    margin-top: 1em;
 }
 
-table {
+/* table {
     margin: 10px;
-}
+} */
 
 
 

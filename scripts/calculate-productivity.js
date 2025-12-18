@@ -32,19 +32,6 @@ class ProductivityTracker{
 
 
 //---M E T H O D S-------
-// function updateTotals(){
-//     const totals = tracker.calculateTotals();
-//     productiveTotal.textContent = `${totals.productive} mins`;
-//     unproductiveTotal.textContent = `${totals.unproductive} mins`;
-
-//     const total = totals.productive + totals.unproductive;
-//     const productivePercent = total > 0 ? (totals.productive / total) * 100 : 0;
-//     const unproductivePercent = 100 - productivePercent;
-
-//     updateDonutChart(productivePercent.toFixed(1), unproductivePercent.toFixed(1));
-
-// }
-
 function updateTotals() {
   const totals = tracker.calculateTotals();
 
