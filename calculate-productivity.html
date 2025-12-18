@@ -43,17 +43,17 @@
             <form id="website-entry-form">
             <div class="form-group">
                 <label for="site-name">Website:</label>
-                <input type="text" id="site-name">
+                <input type="text" id="site-name" required>
             </div>
             <div class="form-group">
                 <label for="min-duration">Minutes:</label>
-                <input type="text" id="min-duration">
+                <input type="number" id="min-duration" required>
             </div>
             <div class="form-group">
                 <label for="site-category">Category:</label>
-                <input type="radio" value="Productive" name="site-category">
+                <input type="radio" value="Productive" name="site-category" required>
                 <label for="productive">Productive</label>
-                <input type="radio" value="Unproductive" name="site-category">
+                <input type="radio" value="Unproductive" name="site-category" required>
                 <label for="unproductive">Unproductive</label>
             </div>
             <input type="submit" value="Add Entry">
@@ -64,9 +64,9 @@
     <section id="summary">
 
         <svg viewBox="0 0 40 40" class="donut" >
-            <circle class="donut-ring" cx="18" cy="18" r="15" />
-            <circle class="donut-segment donut-productive" cx="18" cy="18" r="15" stroke-dasharray="0 100" />
-            <circle class="donut-segment donut-unproductive" cx="18" cy="18" r="15" stroke-dasharray="0 100" stroke-dashoffset="0" />
+            <circle class="donut-ring" cx="18" cy="18" r="15" pathLength="100"/>
+            <circle class="donut-segment donut-productive" cx="18" cy="18" r="15" stroke-dasharray="0 100" pathLength="100"/>
+            <circle class="donut-segment donut-unproductive" cx="18" cy="18" r="15" stroke-dasharray="0 100" stroke-dashoffset="0" pathLength="100"/>
             <text x="18" y="20.35" class="donut-text">0%</text>
         </svg>
 
