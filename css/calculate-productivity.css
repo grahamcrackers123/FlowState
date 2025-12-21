@@ -1,11 +1,20 @@
 /* table section  */
 
+
+/* MOBILE RESPONSIVE LAYOUT */
+
 #form,
 #summary,
 #entry-list-table {
     background-color: white;
     border-radius: 16px;
     padding: 1em;
+}
+
+#form {
+  /* max-width: 400px; */
+  max-width: 500px;
+  justify-self: center;
 }
 
 .main-tracker {
@@ -25,8 +34,8 @@
   .main-tracker {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-      "form summary"
-      "table table";
+      "form form"
+      "summary table";
   }
 
   #form {
@@ -88,7 +97,7 @@
 
 
 .donut-labels {
-  
+  line-height: 0.5em;
   color: #333;
 }
 
@@ -130,6 +139,23 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  text-align: center;
+  gap: 1em;
+}
+
+#add-entry-button {
+  padding: 1em;
+  background-color: #578941;
+  border-radius: 8px;
+  border: 0px;
+  color: white;
+}
+
+input#site-name, 
+input#min-duration {
+  padding: 0.8em;
+  border-radius: 8px;
+  border: 1px solid;
 }
 
 #summary {
@@ -148,4 +174,5 @@
   padding: 1em;
   border-radius: 24px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0;
 }
